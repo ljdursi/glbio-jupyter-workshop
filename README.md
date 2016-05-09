@@ -35,7 +35,7 @@ If you don't already have one, sign up for a free GitHub account at [https://git
 Sign up for a free SageMathCloud account at [https://cloud.sagemath.com/](https://cloud.sagemath.com/).
 (You can just set one up by signing in with your newly-created GitHub account)
 
-Installation instructions: [Windows](#installation-on-windows), [Mac OS X](#install-on-mac), [Linux](#install-on-linux)
+Installation instructions: [Windows](#installation-on-windows), [Mac OS X](#installation-on-mac), [Linux](#installation-on-linux)
 
 ## Installation On Windows
 
@@ -111,5 +111,38 @@ the commands (or selecting Cell>Run All).
 
 ## Installation On Linux
 
+### Install Anacaonda
+If you don't have Anaconda already installed, 
+
+* Open [http://continuum.io/downloads](http://continuum.io/downloads) with your web browser.
+* Download the Python 3 installer for Mac OS X.
+* Install Python 3 using all of the defaults for installation except make sure to check Make Anaconda the default Python.
+
+If you already have Anaconda installed, make sure your Python version is 3.x not 2.x:
+* At the command line, type `python --version`
+
+If it is a 3.x version of python, all's good!  If it's a 2.x version of python, 
+type the following commands at the command line:
+
+* `conda create --name python3 python=3.5 anaconda`
+* `source activate python3`
+
+### Install the necessary conda packages
+
+Once python3 anaconda is installed, we'll need to install some necessary conda packages.
+At the command line, run the following commands to add packages we'll need for the tutorial:
+
+* `conda config --add channels r`
+* `conda install r-essentials`
+* `conda config --add channels bioconda`
+* `conda install bioconductor-deseq2`
+* `conda install git`
+
+Now, make sure Jupyter Notebook is up and running by, from the command line, running `jupyter notebook`.  
+You should either see your browser load a page or, if not, opening the URL `http://localhost:8888/` should show
+a webpage with a Jupyter logo.  If this doesn't happen, [email the instructor](mailto:jonathan@dursi.ca).
+Otherwise, feel free to start playing around by starting a notebook by selecting Run>Notebooks>R (or Run>Notebooks>Python3)
+and entering some R (or Python) commands in the cell and pressing shift-return to run
+the commands (or selecting Cell>Run All).
 
 
