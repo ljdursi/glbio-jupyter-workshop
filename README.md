@@ -15,6 +15,8 @@ In this workshop, we will learn:
       * [GitHub](https://www.github/com) and git
       * [mybinder.org](http://mybinder.org)
 
+Participants will need to have some familiarity with R (or python), and be comfortable entering commands on
+the command line, but need not be an expert at either.
 
 # Preparing for the workshop
 
