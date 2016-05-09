@@ -82,7 +82,7 @@ If you don't have Anaconda already installed,
 
 * Open [http://continuum.io/downloads](http://continuum.io/downloads) with your web browser.
 * Download the Python 3 installer for Mac OS X.
-* Install Python 3 using all of the defaults for installation except make sure to check Make Anaconda the default Python.
+* Install Python 3 using all of the defaults for installation.
 
 If you already have Anaconda installed, make sure your Python version is 3.x not 2.x:
 * At the command line, type `python --version`
@@ -118,7 +118,8 @@ If you don't have Anaconda already installed,
 
 * Open [http://continuum.io/downloads](http://continuum.io/downloads) with your web browser.
 * Download the Python 3 installer for Mac OS X.
-* Install Python 3 using all of the defaults for installation except make sure to check Make Anaconda the default Python.
+* Open a terminal and cd to your downloads directory.
+* run `source Anaconda*` using the defaults for installation.
 
 If you already have Anaconda installed, make sure your Python version is 3.x not 2.x:
 * At the command line, type `python --version`
