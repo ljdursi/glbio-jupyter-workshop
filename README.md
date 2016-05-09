@@ -35,7 +35,7 @@ If you don't already have one, sign up for a free GitHub account at [https://git
 Sign up for a free SageMathCloud account at [https://cloud.sagemath.com/](https://cloud.sagemath.com/).
 (You can just set one up by signing in with your newly-created GitHub account)
 
-Installation instructions: [Windows](#installation-on-windows), [Mac OS X](#installation-on-mac), [Linux](#installation-on-linux)
+Jump to installation instructions for: [Windows](#installation-on-windows), [Mac OS X](#installation-on-mac), [Linux](#installation-on-linux)
 
 ## Installation On Windows
 
