@@ -133,7 +133,7 @@ you can download and install the GitHub Desktop client here:
 If you don't have Anaconda already installed, 
 
 * Open [http://continuum.io/downloads](http://continuum.io/downloads) with your web browser.
-* Download the Python 3 installer for Mac OS X.
+* Download the Python 3 installer for Linux.
 * Open a terminal and cd to your downloads directory.
 * run `source Anaconda*` using the defaults for installation.
 
