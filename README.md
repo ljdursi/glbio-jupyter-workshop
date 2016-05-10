@@ -68,6 +68,14 @@ At the command line, run the following commands to add packages we'll need for t
 * `conda install bioconductor-deseq2`
 * `conda install git`
 
+
+### Optional - Desktop GitHub Client
+
+If you would prefer to use a graphical client for using git and github to a commandline one, 
+you can download and install the GitHub Desktop client here:
+
+* https://desktop.github.com
+
 Now, make sure Jupyter Notebook works by either running "Jupyter Notebook" from the Start menu, or from a command line typing `jupyter notebook`.  
 You should either see your browser load a page or, if not, opening the URL `http://localhost:8888/` should show
 a webpage with a Jupyter logo.  If this doesn't happen, [email the instructor](mailto:jonathan@dursi.ca).
@@ -110,6 +118,14 @@ a webpage with a Jupyter logo.  If this doesn't happen, [email the instructor](m
 Otherwise, feel free to start playing around by starting a notebook by selecting Run>Notebooks>R (or Run>Notebooks>Python3)
 and entering some R (or Python) commands in the cell and pressing shift-return to run
 the commands (or selecting Cell>Run All).
+
+### Optional - Desktop GitHub Client
+
+If you would prefer to use a graphical client for using git and github to a commandline one, 
+you can download and install the GitHub Desktop client here:
+
+* https://desktop.github.com
+
 
 ## Installation On Linux
 
