@@ -16,7 +16,7 @@ source('get_data.R')
 
 library(DESeq2)
 
-# Create a coldata frame and instantiate the DESeqDataSet. See ?DESeqDataSetFromMatrix
+# Instantiate the DESeqDataSet. See ?DESeqDataSetFromMatrix
 dds <- DESeqDataSetFromMatrix(countData=countdata, colData=coldata, design=~condition)
 dds
 
