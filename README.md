@@ -15,6 +15,8 @@ In this workshop, we will learn:
       * [GitHub](https://www.github/com) and git
       * [mybinder.org](http://mybinder.org)
 
+Participants will need to have some familiarity with R (or python), and be comfortable entering commands on
+the command line, but need not be an expert at either.
 
 # Preparing for the workshop
 
@@ -62,9 +64,13 @@ At the command line, run the following commands to add packages we'll need for t
 
 * `conda config --add channels r`
 * `conda install r-essentials`
-* `conda config --add channels bioconda`
-* `conda install bioconductor-deseq2`
 * `conda install git`
+
+Now we'll have to start R and install some BioConductor packages:  from the command line, run `R` and enter:
+
+* `source("https://bioconductor.org/biocLite.R")`
+* `biocLite()`
+* `biocLite(c('DESeq2'))`
 
 Now, make sure Jupyter Notebook works by either running "Jupyter Notebook" from the Start menu, or from a command line typing `jupyter notebook`.  
 You should either see your browser load a page or, if not, opening the URL `http://localhost:8888/` should show
@@ -73,6 +79,13 @@ Otherwise, feel free to start playing around by starting a notebook by selecting
 and entering some R (or Python) commands in the cell and pressing shift-return to run
 the commands (or selecting Cell>Run All).
 
+### Optional - Desktop Graphical GitHub Client
+
+If you would prefer to use a graphical client for using git and github to a commandline one, 
+you can download and install the GitHub Desktop client here:
+
+* https://desktop.github.com
+
 ## Installation On Mac
 
 ### Install Anacaonda
@@ -80,7 +93,7 @@ If you don't have Anaconda already installed,
 
 * Open [http://continuum.io/downloads](http://continuum.io/downloads) with your web browser.
 * Download the Python 3 installer for Mac OS X.
-* Install Python 3 using all of the defaults for installation except make sure to check Make Anaconda the default Python.
+* Install Python 3 using all of the defaults for installation.
 
 If you already have Anaconda installed, make sure your Python version is 3.x not 2.x:
 * At the command line, type `python --version`
@@ -109,14 +122,24 @@ Otherwise, feel free to start playing around by starting a notebook by selecting
 and entering some R (or Python) commands in the cell and pressing shift-return to run
 the commands (or selecting Cell>Run All).
 
+### Optional - Desktop GitHub Client
+
+If you would prefer to use a graphical client for using git and github to a commandline one, 
+you can download and install the GitHub Desktop client here:
+
+* https://desktop.github.com
+
+
 ## Installation On Linux
 
 ### Install Anacaonda
 If you don't have Anaconda already installed, 
 
 * Open [http://continuum.io/downloads](http://continuum.io/downloads) with your web browser.
-* Download the Python 3 installer for Mac OS X.
-* Install Python 3 using all of the defaults for installation except make sure to check Make Anaconda the default Python.
+* Download the Python 3 installer for Linux.
+* Open a terminal and cd to your downloads directory.
+* run `bash Anaconda*` using the defaults for installation.
+* This will add the anaconda tools (and the new python) in a subdirectory of your home directory, and update your PATH so that it finds those tools first.  For that change to your path to take effect, either `source ~/.bashrc` or open a new terminal.
 
 If you already have Anaconda installed, make sure your Python version is 3.x not 2.x:
 * At the command line, type `python --version`
