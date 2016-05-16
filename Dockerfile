@@ -1,4 +1,5 @@
 FROM andrewosh/binder-base
+# Taken from https://github.com/ctb/2016-mybinder-irkernel/
 
 USER root
 
