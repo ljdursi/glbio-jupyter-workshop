@@ -127,6 +127,7 @@ then
     ~/anaconda3/bin/conda config --add channels r
     ~/anaconda3/bin/conda install -y r-base=3.2.2
     ~/anaconda3/bin/conda install -y r-essentials=1.1
+    ~/anaconda3/bin/conda config --add channels bioconda
     ~/anaconda3/bin/conda install -y bioconductor-deseq2
 fi
 ```
