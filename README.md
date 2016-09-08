@@ -78,7 +78,7 @@ Now we'll have to start R and install some BioConductor packages:  from the comm
 * `source("https://bioconductor.org/biocLite.R")`
 * `biocLite()`
 * `biocLite(c('DESeq2'))`
-* `install.packages(c('rzmq','repr','IRkernel','IRdisplay'), repos = c('http://irkernel.github.io/', 'http://cran.utstat.utoronto.ca/'))`
+* `install.packages(c('rzmq','repr','IRkernel','IRdisplay','Cairo'), repos = c('http://irkernel.github.io/', 'http://cran.utstat.utoronto.ca/'))`
 
 Now, make sure Jupyter Notebook works by either running "Jupyter Notebook" from the Start menu, or from a command line typing `jupyter notebook`.  
 You should either see your browser load a page or, if not, opening the URL `http://localhost:8888/` should show
