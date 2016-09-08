@@ -133,6 +133,12 @@ fi
 
 Otherwise you can do the steps manually:
 
+### Get data files
+
+Download the most recent release of these files from:
+
+* [https://github.com/ljdursi/glbio-jupyter-workshop/releases](https://github.com/ljdursi/glbio-jupyter-workshop/releases)
+
 ### Install Anacaonda
 If you don't have Anaconda already installed, 
 
