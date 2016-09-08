@@ -1,14 +1,13 @@
 # Jupyter Notebooks for Performing and Sharing Bioinformatics Analyses
 
-Date: Monday, May 16, 2016
-Time:  10:30am-12:30pm
-Location:  VC 101
+Date: Monday, Sept 12, 2016
+Time:  2:00pm-3:30pm
 
 In this workshop, we will learn:
   * The basics of Jupyter notebooks - what they are and how they work
   * How to install and run Jupyter notebooks on their laptop, in R and Python
   * How to perform interactive analyses in a web browser using Jupyter
-  * Using markdown and latex to 
+  * Using markdown and latex to make attractive notebooks 
   * How to "Port" an R bioinformatics workflow from some scripts into a Jupyter notebook
   * How to share a Jupyter notebook online, using three different approaches
       * [SageMathCloud](https://cloud.sagemath.com)
@@ -35,20 +34,19 @@ If you don't already have one, sign up for a free GitHub account at [https://git
 ## SageMathCloud Account
 
 Sign up for a free SageMathCloud account at [https://cloud.sagemath.com/](https://cloud.sagemath.com/).
-(You can just set one up by signing in with your newly-created GitHub account)
+(You can just set one up by signing in with your GitHub account)
 
-## Get data files
+## Install software and Data Files
+
+Jump to installation instructions for: [Windows](#installation-on-windows), [Mac OS X or Linux](#installation-on-mac-or-linux)
+
+## Installation On Windows
+
+### Get data files
 
 Download and unpack either the .tgz file or .zip file, whichever seems most familar, at:
 
 * [https://github.com/ljdursi/glbio-jupyter-workshop/releases](https://github.com/ljdursi/glbio-jupyter-workshop/releases)
-
-## Install software
-
-Jump to installation instructions for: [Windows](#installation-on-windows), [Mac OS X](#installation-on-mac), [Linux](#installation-on-linux)
-
-
-## Installation On Windows
 
 ### Install Anacaonda
 If you don't have Anaconda already installed, 
@@ -63,8 +61,8 @@ If you already have Anaconda installed, make sure your Python version is 3.x not
 If it is a 3.x version of python, all's good!  If it's a 2.x version of python, 
 type the following commands at the command line:
 
-* `conda create --name python3 python=3.5 anaconda`
-* `activate python3`
+* `conda create --name notebook_tutorial python=3.5 anaconda`
+* `activate notebook_tutorial`
 
 ### Install the necessary conda packages
 
@@ -72,7 +70,8 @@ Once python3 anaconda is installed, we'll need to install some necessary conda p
 At the command line, run the following commands to add packages we'll need for the tutorial:
 
 * `conda config --add channels r`
-* `conda install r-essentials`
+* `conda install r-base=3.2.2`
+* `conda install r-essentials=1.1`
 
 Now we'll have to start R and install some BioConductor packages:  from the command line, run `R` and enter:
 
@@ -88,8 +87,51 @@ Otherwise, feel free to start playing around by starting a notebook by selecting
 and entering some R (or Python) commands in the cell and pressing shift-return to run
 the commands (or selecting Cell>Run All).
 
+## Installation On Mac Or Linux
 
-## Installation On Mac
+If you don't already have anaconda installed, the following script should install everything. 
+After the tutorial, deleting the `~/anaconda` directory will remove all installed software:
+
+```
+#!/bin/bash
+# get the example notebooks + Dockerfile
+if [[ ! -d glbio-jupyter-workshop ]]
+then
+    wget https://github.com/ljdursi/glbio-jupyter-workshop/releases/download/1.0.0/glbio-jupyter.tgz
+    tar -xzvf glbio-jupyter.tgz
+    rm glbio-jupyter.tgz
+fi
+
+if [ "$(uname)" == "Darwin" ]
+then
+    arch="MacOSX"
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+    arch="Linux"
+else
+    >&2 echo "No idea what system this is"
+    exit -1
+fi
+
+# get Anaconda
+if [[ ! -d ~/anaconda3 ]]
+then
+    wget https://repo.continuum.io/archive/Anaconda3-4.1.1-${arch}-x86_64.sh
+    bash Anaconda3-4.1.1-Linux-x86_64.sh -b
+    rm Anaconda3-4.1.1-Linux-x86_64.sh
+    ~/anaconda3/bin/conda update -y --all
+fi
+
+# Get conda channels for R, bioconductor
+if [[ ! -f anaconda3/bin/R ]]
+then
+    ~/anaconda3/bin/conda config --add channels r
+    ~/anaconda3/bin/conda install -y r-base=3.2.2
+    ~/anaconda3/bin/conda install -y r-essentials=1.1
+    ~/anaconda3/bin/conda install -y bioconductor-deseq2
+fi
+```
+
+Otherwise you can do the steps manually:
 
 ### Install Anacaonda
 If you don't have Anaconda already installed, 
@@ -104,57 +146,30 @@ If you already have Anaconda installed, make sure your Python version is 3.x not
 If it is a 3.x version of python, all's good!  If it's a 2.x version of python, 
 type the following commands at the command line:
 
-* `conda create --name python3 python=3.5 anaconda`
-* `source activate python3`
+```
+conda create --name notebook_tutorial python=3.5 anaconda
+source activate notebook_tutorial
+```
 
 ### Install the necessary conda packages
 
 Once python3 anaconda is installed, we'll need to install some necessary conda packages.
-At the command line, run the following commands to add packages we'll need for the tutorial:
+At the command line, run the following commands to add packages we'll need for the tutorial.
+Note that the versions for R matter, as the most recent version breaks plotting in 
+notebooks:
 
-* `conda config --add channels r`
-* `conda install r-essentials`
-* `conda config --add channels bioconda`
-* `conda install bioconductor-deseq2`
+```
+conda config --add channels r
+conda install r-base=3.2.2
+conda install r-essentials=1.1
+conda config --add channels bioconda
+conda install bioconductor-deseq
+```
 
-Now, make sure Jupyter Notebook is up and running by, from the command line, running `jupyter notebook`.  
-You should either see your browser load a page or, if not, opening the URL `http://localhost:8888/` should show
-a webpage with a Jupyter logo.  If this doesn't happen, [email the instructor](mailto:jonathan@dursi.ca).
-Otherwise, feel free to start playing around by starting a notebook by selecting Run>Notebooks>R (or Run>Notebooks>Python3)
-and entering some R (or Python) commands in the cell and pressing shift-return to run
-the commands (or selecting Cell>Run All).
+Now, after making sure the anaconda installation is in your path by re-sourcing .bashrc or starting
+a new terminal, you should make sure Jupyter Notebook is up and running by, from the command line, running 
+`jupyter notebook`.  
 
-## Installation On Linux
-
-### Install Anacaonda
-If you don't have Anaconda already installed, 
-
-* Open [http://continuum.io/downloads](http://continuum.io/downloads) with your web browser.
-* Download the Python 3 installer for Linux.
-* Open a terminal and cd to your downloads directory.
-* run `bash Anaconda*` using the defaults for installation.
-* This will add the anaconda tools (and the new python) in a subdirectory of your home directory, and update your PATH so that it finds those tools first.  For that change to your path to take effect, either `source ~/.bashrc` or open a new terminal.
-
-If you already have Anaconda installed, make sure your Python version is 3.x not 2.x:
-* At the command line, type `python --version`
-
-If it is a 3.x version of python, all's good!  If it's a 2.x version of python, 
-type the following commands at the command line:
-
-* `conda create --name python3 python=3.5 anaconda`
-* `source activate python3`
-
-### Install the necessary conda packages
-
-Once python3 anaconda is installed, we'll need to install some necessary conda packages.
-At the command line, run the following commands to add packages we'll need for the tutorial:
-
-* `conda config --add channels r`
-* `conda install r-essentials`
-* `conda config --add channels bioconda`
-* `conda install bioconductor-deseq2`
-
-Now, make sure Jupyter Notebook is up and running by, from the command line, running `jupyter notebook`.  
 You should either see your browser load a page or, if not, opening the URL `http://localhost:8888/` should show
 a webpage with a Jupyter logo.  If this doesn't happen, [email the instructor](mailto:jonathan@dursi.ca).
 Otherwise, feel free to start playing around by starting a notebook by selecting Run>Notebooks>R (or Run>Notebooks>Python3)
