@@ -130,6 +130,7 @@ then
     ~/anaconda3/bin/conda config --add channels bioconda
     ~/anaconda3/bin/conda install -y bioconductor-deseq2
 fi
+~/anaconda3/bin/jupyter notebook
 ```
 
 Otherwise you can do the steps manually:
