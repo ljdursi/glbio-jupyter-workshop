@@ -97,9 +97,9 @@ After the tutorial, deleting the `~/anaconda` directory will remove all installe
 # get the example notebooks + Dockerfile
 if [[ ! -d glbio-jupyter-workshop ]]
 then
-    wget https://github.com/ljdursi/glbio-jupyter-workshop/releases/download/1.2.0/glbio-jupyter.tgz
-    tar -xzvf glbio-jupyter.tgz
-    rm glbio-jupyter.tgz
+    wget https://github.com/ljdursi/glbio-jupyter-workshop/archive/1.2.0.tar.gz
+    tar -xzvf 1.2.0.tar.gz
+    rm 1.2.0.tar.gz
 fi
 
 if [ "$(uname)" == "Darwin" ]
