@@ -133,6 +133,19 @@ fi
 ~/anaconda3/bin/jupyter notebook
 ```
 
+When this is done, jupyter notebook should be started; to make sure the R kernel and plotting works, try the following:
+
+* In the upper right hand side of the web page, select New>(Notebooks) R
+* Then enter the following lines into the first cell of the notebook:
+```
+time <- seq(from = 0, to=4*pi, length.out = 100)
+intensity <- exp(sin(sin(time)))
+plot(time, intensity)
+```
+and select Cell>Run Cells.  You should get a nice plot, in which case you're done; otherwise, contact me
+(jonathan@dursi.ca).  
+
+
 Otherwise you can do the steps manually:
 
 ### Get data files
@@ -183,3 +196,12 @@ a webpage with a Jupyter logo.  If this doesn't happen, [email the instructor](m
 Otherwise, feel free to start playing around by starting a notebook by selecting Run>Notebooks>R (or Run>Notebooks>Python3)
 and entering some R (or Python) commands in the cell and pressing shift-return to run
 the commands (or selecting Cell>Run All).
+
+To make sure plotting works, enter this into a cell
+```
+time <- seq(from = 0, to=4*pi, length.out = 100)
+intensity <- exp(sin(sin(time)))
+plot(time, intensity)
+```
+and select Cell>Run Cells.  You should get a nice plot, in which case you're done; otherwise, contact me
+(jonathan@dursi.ca).  
